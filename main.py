@@ -413,11 +413,11 @@ with st.expander("Laboratorio de riesgos", expanded=False):
 
         colf1, colf2, colf3 = st.columns(3)
         with colf1:
-            riesgos_fase1_text = st.text_input("Fase 1 (riesgo):", "5,10,15,20,25", key="riesgo1")
+            riesgos_fase1_text = st.text_input("Fase 1 (riesgo):", "7.5,10,12.5,15,20", key="riesgo1")
         with colf2:
-            riesgos_fase2_text = st.text_input("Fase 2 (riesgo):", "5,10,15,20", key="riesgo2")
+            riesgos_fase2_text = st.text_input("Fase 2 (riesgo):", "7.5,10,12.5,15", key="riesgo2")
         with colf3:
-            riesgos_fondeada_text = st.text_input("Fase Fondeada (riesgo):", "8,10,12,15", key="riesgo3")
+            riesgos_fondeada_text = st.text_input("Fase Fondeada (riesgo):", "3,5,8,10", key="riesgo3")
 
         calcular_riesgos = st.button("Calcular valores laboratorio", key="calcula_riesgos")
 
@@ -515,4 +515,5 @@ with st.expander("Laboratorio de riesgos", expanded=False):
             st.markdown('<div class="scrollable-table">' + df_fon.to_html(index=False) + '</div>', unsafe_allow_html=True)
 
         elif calcular_riesgos is not None:
+
             st.info("Pulsa 'Calcular valores laboratorio' para lanzar la simulación con los riesgos indicados.")
